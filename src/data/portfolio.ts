@@ -21,7 +21,7 @@ export const portfolio: PortfolioItemType[] = [
     id: 3,
     title: "Car Rental E-Commerce Website",
     description: "A sleek and user-friendly car rental platform that allows customers to browse, book, and pay for vehicles online with ease. Features include real-time availability, secure checkout, and responsive design.",
-    image: "public//car.png",
+    image: "public/car.png",
     tags: [ "Next.js", "TailwindCSS" , "TypeScript" , "Sanity"],
     link: "https://q2-hakhathon-car-rent-shop-9fr1.vercel.app/"
   },

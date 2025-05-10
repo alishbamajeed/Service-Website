@@ -32,16 +32,16 @@ const About: React.FC = () => {
   };
 
   return (
-    <section id="about" className="py-20 bg-gray-50 dark:bg-gray-800">
+    <section id="about" className="py-10 md:py-20 bg-gray-50 dark:bg-gray-800">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <motion.div
             ref={ref}
             variants={fadeInLeft}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="relative"
+            className="relative order-2 lg:order-1"
           >
             <div className="relative rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300 hover:border-4 hover:border-primary-500 animate-pulse">
               <img 
@@ -53,17 +53,17 @@ const About: React.FC = () => {
             </div>
             
             <motion.div 
-              className="absolute -right-10 -bottom-10 bg-white dark:bg-gray-900 shadow-xl rounded-lg p-4 z-10 hover:shadow-2xl transition-all duration-300 hover:border-2 hover:border-primary-500 hover:scale-110"
+              className="absolute -right-5 md:-right-10 -bottom-5 md:-bottom-10 bg-white dark:bg-gray-900 shadow-xl rounded-lg p-3 md:p-4 z-10 hover:shadow-2xl transition-all duration-300 hover:border-2 hover:border-primary-500 hover:scale-110"
               variants={fadeInUp}
               initial="hidden"
               animate={inView ? "visible" : "hidden"}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <div className="flex items-center justify-center w-16 h-16 mx-auto bg-primary-100 dark:bg-primary-900 rounded-full text-primary-500 mb-2 transform hover:rotate-12 transition-transform duration-300">
-                <Award className="w-8 h-8" />
+              <div className="flex items-center justify-center w-12 md:w-16 h-12 md:h-16 mx-auto bg-primary-100 dark:bg-primary-900 rounded-full text-primary-500 mb-2 transform hover:rotate-12 transition-transform duration-300">
+                <Award className="w-6 md:w-8 h-6 md:h-8" />
               </div>
-              <p className="text-center text-gray-900 dark:text-white font-bold text-xl">1+ Years</p>
-              <p className="text-center text-gray-600 dark:text-gray-400 text-sm">Industry Experience</p>
+              <p className="text-center text-gray-900 dark:text-white font-bold text-lg md:text-xl">1+ Years</p>
+              <p className="text-center text-gray-600 dark:text-gray-400 text-xs md:text-sm">Industry Experience</p>
             </motion.div>
           </motion.div>
 
@@ -72,21 +72,21 @@ const About: React.FC = () => {
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="hover:border-l-4 hover:border-primary-500 pl-4 transition-all duration-300"
+            className="hover:border-l-4 hover:border-primary-500 pl-2 md:pl-4 transition-all duration-300 order-1 lg:order-2"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6 hover:text-primary-500 transition-colors duration-300">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4 md:mb-6 hover:text-primary-500 transition-colors duration-300">
               About <span className="text-primary-500">TechSolutions Pro</span>
             </h2>
             
-            <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 hover:text-gray-900 dark:hover:text-white transition-colors duration-300">
+            <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 mb-4 md:mb-6 hover:text-gray-900 dark:hover:text-white transition-colors duration-300">
               Founded in 2024, TechSolutions Pro has been at the forefront of digital innovation, helping businesses of all sizes transform their ideas into powerful digital solutions.
             </p>
             
-            <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 hover:text-gray-900 dark:hover:text-white transition-colors duration-300">
+            <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 mb-4 md:mb-6 hover:text-gray-900 dark:hover:text-white transition-colors duration-300">
               Our team of talented developers, designers, and strategists work collaboratively to deliver exceptional results that exceed expectations. We believe in building long-term relationships with our clients, becoming trusted partners in their digital journey.
             </p>
             
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
+            <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6 mt-6 md:mt-10">
               {stats.map((stat, index) => (
                 <motion.div 
                   key={index}
@@ -94,21 +94,21 @@ const About: React.FC = () => {
                   initial="hidden"
                   animate={inView ? "visible" : "hidden"}
                   transition={{ duration: 0.5, delay: 0.1 * index }}
-                  className="text-center transform hover:scale-105 transition-all duration-300 hover:border-2 hover:border-primary-500 p-3 rounded-lg"
+                  className="text-center transform hover:scale-105 transition-all duration-300 hover:border-2 hover:border-primary-500 p-2 md:p-3 rounded-lg"
                 >
-                  <div className="w-12 h-12 mx-auto flex items-center justify-center bg-primary-100 dark:bg-primary-900 rounded-full text-primary-500 mb-3 hover:bg-primary-200 dark:hover:bg-primary-800 transition-colors duration-300 animate-bounce">
+                  <div className="w-8 h-8 md:w-12 md:h-12 mx-auto flex items-center justify-center bg-primary-100 dark:bg-primary-900 rounded-full text-primary-500 mb-2 md:mb-3 hover:bg-primary-200 dark:hover:bg-primary-800 transition-colors duration-300 animate-bounce">
                     {stat.icon}
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{stat.value}</h3>
-                  <p className="text-gray-600 dark:text-gray-400">{stat.label}</p>
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">{stat.value}</h3>
+                  <p className="text-sm md:text-base text-gray-600 dark:text-gray-400">{stat.label}</p>
                 </motion.div>
               ))}
             </div>
 
-            <div className="mt-8">
-              <a href="#" className="inline-flex items-center text-primary-500 hover:text-primary-600 font-medium group transition-all duration-300 hover:border-b-2 hover:border-primary-500">
+            <div className="mt-6 md:mt-8">
+              <a href="#" className="inline-flex items-center text-primary-500 hover:text-primary-600 font-medium group transition-all duration-300 hover:border-b-2 hover:border-primary-500 text-sm md:text-base">
                 Learn more about our journey
-                <svg className="ml-2 w-5 h-5 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <svg className="ml-2 w-4 h-4 md:w-5 md:h-5 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                 </svg>
               </a>

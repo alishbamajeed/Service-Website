@@ -47,7 +47,6 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-
         <div className="flex justify-between items-center py-3">
           <div className="flex items-center">
             <motion.div
@@ -64,14 +63,13 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
                 duration={500}
                 className="cursor-pointer"
               >
-                <img src="/logo.png" alt="Logo" className="w-40 h-12 object-contain" />
+                <img src="/logo.png" alt="Logo" className="w-32 h-10 sm:w-40 sm:h-12 object-contain" />
               </ScrollLink>
             </motion.div>
           </div>
 
           {/* Desktop Navigation */}
-
-          <nav className="hidden md:flex space-x-6">
+          <nav className="hidden md:flex space-x-4 lg:space-x-6">
             {navLinks.map((link) => (
               <ScrollLink
                 key={link.to}
@@ -80,8 +78,7 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
                 smooth={true}
                 offset={-70}
                 duration={500}
-
-                className={`font-medium text-base px-3 py-1.5 transition-all duration-300 cursor-pointer border-b-2 border-transparent hover:border-primary-500 ${
+                className={`font-medium text-sm lg:text-base px-2 lg:px-3 py-1.5 transition-all duration-300 cursor-pointer border-b-2 border-transparent hover:border-primary-500 ${
                   theme === 'dark' ? 'text-gray-300 hover:text-primary-400' : 'text-gray-700'
                 }`}
               >
@@ -94,10 +91,9 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
-              className="text-gray-700 dark:text-gray-300 focus:outline-none"
+              className="text-gray-700 dark:text-gray-300 focus:outline-none p-2"
               aria-label="Toggle menu"
             >
-
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -113,7 +109,6 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
           transition={{ duration: 0.3 }}
           className="md:hidden bg-white dark:bg-gray-900 shadow-xl"
         >
-
           <div className="px-4 py-2 space-y-1">
             {navLinks.map((link) => (
               <ScrollLink
@@ -123,8 +118,7 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
                 smooth={true}
                 offset={-70}
                 duration={500}
-
-                className="block py-2 px-3 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-all duration-300 cursor-pointer"
+                className="block py-2 px-3 text-sm sm:text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-all duration-300 cursor-pointer"
                 onClick={() => setIsOpen(false)}
               >
                 {link.title}
